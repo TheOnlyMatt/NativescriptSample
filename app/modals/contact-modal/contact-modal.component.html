@@ -1,0 +1,17 @@
+<GridLayout class="modal" backgroundColor="#393939" (tap)="close()" backgroundColor="white" tkExampleTitle tkToggleNavButton>
+
+    <RadListView [items]="filtres" class="list-group">
+        <ng-template tkListItemTemplate let-filtre="item">
+            <StackLayout>
+                <StackLayout (tap)="close(filtre)" class="list-group-item">
+                    <Label [text]="filtre.title" class="label"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <StackLayout marginLeft="30" *ngFor="let child of filtre.children">
+                        <Label marginBottom="10" (tap)="close(child)" [text]="child.title" class="label"></Label>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ng-template>
+    </RadListView>
+</GridLayout>
