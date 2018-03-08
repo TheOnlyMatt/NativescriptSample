@@ -4,6 +4,8 @@ import { RadSideDrawerComponent } from "nativescript-pro-ui/sidedrawer/angular";
 import { ModalDialogService } from "nativescript-angular/directives/dialogs";
 import { ContactModalComponent } from "../modals/contact-modal/contact-modal.component";
 import { BrowseComponent } from "./../browse/browse.component";
+import { RouterExtensions } from "nativescript-angular/router";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
     selector: "Home",
@@ -17,11 +19,11 @@ export class HomeComponent implements OnInit {
     *************************************************************/
     @ViewChild("drawer") drawerComponent: RadSideDrawerComponent;
 
-    private frameworks
+    value: any;
 
     private _sideDrawerTransition: DrawerTransitionBase;
 
-    constructor(private modal: ModalDialogService, private vcRef: ViewContainerRef){
+    constructor(private modal: ModalDialogService, private vcRef: ViewContainerRef, private routerExtensions : RouterExtensions, private activatedRoute: ActivatedRoute){
         let options = {
             context: {},
             fullscreen: true,
@@ -34,6 +36,7 @@ export class HomeComponent implements OnInit {
     *************************************************************/
     ngOnInit(): void {
         this._sideDrawerTransition = new SlideInOnTopTransition();
+        this.value = this.activatedRoute.snapshot.queryParams["value"] || "Nothing set yet!";
     }
 
     get sideDrawerTransition(): DrawerTransitionBase {
@@ -115,4 +118,21 @@ export class HomeComponent implements OnInit {
         this.modal.showModal(BrowseComponent, options).then(res => {
         });
      }
+
+    openFeatured(){
+        this.routerExtensions.navigate(["/webview"],  {
+            transition: {
+                name: "fade",
+                duration: 300
+            }
+        })
+    }
+
+    openHome(){
+        this.routerExtensions.navigate(['/home'], {
+            queryParams: {
+                value: Math.random()
+            }
+        });
+    }
 }

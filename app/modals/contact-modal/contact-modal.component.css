@@ -1,1 +1,22 @@
-#headerLabel2{font-size:45;horizontal-align:center;margin-top:-25;color:#B2EBF2}#headerLabel{font-size:45;horizontal-align:center;padding-top:75;color:#B2EBF2}.header-template{background-color:#212121;background-image:url("~/images/mountains.png");background-size:cover;height:250}.body-template textview{font-size:20;padding:5 15;border:none}#titleLabel{font-weight:bold;font-size:30;padding:5 15}.modal{min-width:200}.modal .item>StackLayout{border-color:#fff #fff #b6b6b6 #fff;border-width:0 0 1 0}
+.details .name{
+    font-size: 30;
+    horizontal-align: center;
+    color:#B2EBF2;
+    border-color: #fff #fff #b6b6b6 #fff;
+    border-width: 0 0 1 0;
+}
+.details .position{
+    padding: 10 0;
+    font-size: 20;
+    color:#212121;
+}
+.details .phone{
+    padding: 10 0;
+    font-size: 15;
+    color:#212121;
+}
+.details .mail{
+    font-size: 15;
+    color:#212121;
+    padding: 10 0;
+}

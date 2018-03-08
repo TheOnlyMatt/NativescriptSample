@@ -10,11 +10,6 @@ import { ModalModule } from "./modals/modal.module"
 import { Location } from "./providers/location.service"
 
 import * as platform from "platform";
-declare var GMSServices: any;
-
-if (platform.isIOS) {
-    GMSServices.provideAPIKey("AIzaSyAXO-UXMumRmZ6GcFlR1BhppMv1xs61WDQ");
-}
 
 @NgModule({
     bootstrap: [

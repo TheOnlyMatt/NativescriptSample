@@ -4,11 +4,12 @@
 //dependencies {
 //	compile 'com.android.support:recyclerview-v7:+'
 //}
+//
 
 android {  
   defaultConfig {  
     generatedDensities = []
-    applicationId = "org.nativescript.ngGoogleMap"  
+    applicationId = "sample.nativescript.app"
   }  
   aaptOptions {  
     additionalParameters "--no-version-vectors"  

@@ -31,12 +31,14 @@ it shouldn't have any other siblings other than the <ActionBar> component.
     Use the tkMainContent directive to display the content of the page when you have an app drawer.
     -->
     <GridLayout class="page page-content" tkMainContent>
-        <Label class="page-icon fa" text="&#xf015;"></Label>
+        <Label (tap)="openFeatured()" class="page-icon fa" text="&#xf015;"></Label>
         <!--<Label class="page-placeholder" text="&lt;!&ndash; Page content goes here &ndash;&gt;"></Label>-->
 
         <StackLayout horizontalAlignment="center" verticalAlignment="center">
             <Button text="Filtres" (tap)="showModal($event)" class="btn btn-primary"></Button>
             <Button text="Map" (tap)="showMap($event)" class="btn btn-primary"></Button>
+            <Button text="Click me to test router links" (tap)="openHome($event)" class="btn btn-primary"></Button>
+            <Label [text]="value"></Label>
         </StackLayout>
     </GridLayout>
 </RadSideDrawer>
